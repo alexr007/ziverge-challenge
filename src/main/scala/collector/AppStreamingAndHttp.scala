@@ -58,7 +58,7 @@ object AppStreamingAndHttp extends App {
 
   server.onComplete {
     case Success(ServerBinding(la)) =>
-      as.log.info("Server started at http://{}:{}/", la.getHostString, la.getPort)
+      as.log.info("Server started at http://{}:{}/state", la.getHostString, la.getPort)
     case Failure(ex) =>
       as.log.error("Server failed to start", ex)
       as.terminate()
